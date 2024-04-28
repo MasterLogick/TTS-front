@@ -1,48 +1,31 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: "development",
     devtool: "inline-source-map",
     entry: {index: "./src/index.tsx"},
     output: {
-        filename: "./bundle.js",
+        filename: "[name].js",
         path: path.resolve(__dirname, "dist"),
     },
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: "ts-loader",
                 exclude: /node_modules/,
+                loader: "ts-loader"
             },
             {
-                test: /\.css$/,
-                use: [
-                    {
-                        loader: "style-loader",
-                    },
-                    {
-                        loader: "css-loader",
-                        options: {
-                            importLoaders: 1,
-                        }
-                    },
-                    {
-                        loader: "postcss-loader"
-                    }
-                ]
-            }
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+            },
         ]
     },
     resolve: {
-        extensions: [".ts", ".tsx", "..."]
+        extensions: [".tsx", ".ts", ".js", ".css", "..."],
     },
-    plugins: [],
-    devServer: {
-        static: {
-            directory: path.join(__dirname, "public"),
-        },
-        compress: true,
-        port: 9000,
-    },
+    plugins: [
+        new MiniCssExtractPlugin({}),
+    ]
 };

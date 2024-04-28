@@ -1,0 +1,11 @@
+.arrow.selectedArrow {
+    background: var(--mantine-color-blue-3);
+}
+
+.arrow {
+    border: none;
+    border-radius: rem(3);
+    padding: rem(3);
+    margin: rem(2);
+    background: var(--mantine-color-dark-light);
+}

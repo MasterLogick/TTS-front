@@ -2,7 +2,7 @@
   "name": "tts-front",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.tsx",
   "scripts": {
     "serve": "webpack serve",
     "build": "webpack build"
@@ -15,6 +15,7 @@
     "@mantine/hooks": "^7.8.1",
     "@tabler/icons-react": "^3.2.0",
     "axios": "^1.6.8",
+    "clsx": "^2.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -24,6 +25,7 @@
     "autoprefixer": "^10.4.19",
     "babel-loader": "^9.1.3",
     "css-loader": "^7.1.1",
+    "mini-css-extract-plugin": "^2.9.0",
     "postcss": "^8.4.38",
     "postcss-js": "^4.0.1",
     "postcss-loader": "^8.1.1",

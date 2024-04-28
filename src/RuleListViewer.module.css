@@ -1,0 +1,16 @@
+.badge {
+    padding: rem(10);
+    border: rem(1) solid;
+    border-radius: rem(5);
+    text-align: center;
+}
+
+.blue {
+    border-color: var(--mantine-color-blue-2);
+    background: var(--mantine-color-blue-1);
+}
+
+.red {
+    border-color: var(--mantine-color-red-2);
+    background: var(--mantine-color-red-1);
+}

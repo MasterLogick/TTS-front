@@ -1,7 +1,5 @@
 module.exports = {
     plugins: {
-        "autoprefixer": {},
-        "postcss-nested": {},
         "postcss-preset-mantine": {},
         "postcss-simple-vars": {
             variables: {
