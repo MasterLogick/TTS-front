@@ -1,25 +1,18 @@
 import React from "react";
 import {SyncRule} from "./SyncRule";
-import {Badge, Combobox, Grid, GridCol, rem, Table} from "@mantine/core";
+import {rem, Table} from "@mantine/core";
 import {IconArrowLeft, IconArrowRight, IconArrowsDiff, IconArrowsLeft, IconX} from "@tabler/icons-react";
-import Header = Combobox.Header;
 import axios from "axios";
 import clsx from "clsx";
 import * as classes from "./RuleListViewer.module.css"
 
 const TableArrowSize = 32;
 
-export function RuleListViewer({sourceTracker, destinationTracker, ruleList, refreshRuleList}: {
-    sourceTracker: string,
-    destinationTracker: string,
+export function RuleListViewer({ruleList, refreshRuleList}: {
     ruleList: SyncRule[],
     refreshRuleList: () => void
 }) {
     return <>
-        {/*<Grid columns={11}>
-            <GridCol span={5}><p style={{textAlign: "center"}}>{sourceTracker}</p></GridCol>
-            <GridCol offset={6} span={5}><p style={{textAlign: "center"}}>{destinationTracker}</p></GridCol>
-        </Grid>*/}
         <Table withRowBorders={false}>
             <Table.Thead>
                 <Table.Tr>

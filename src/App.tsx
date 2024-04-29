@@ -17,6 +17,12 @@ export function App() {
     const [direction, setDirection] = useState<SyncDirection>("cmp");
     const [ruleList, setRuleList] = useState<SyncRule[]>([]);
     const refreshRuleList = () => {
+        if (sourceFilter.tracker === "" ||
+            sourceFilter.board === "" ||
+            destinationFilter.tracker === "" ||
+            destinationFilter.board === "") {
+            return;
+        }
         axios.get("/api/rule_list", {
             params: {
                 sourceProject: sourceFilter.tracker,
@@ -96,8 +102,7 @@ export function App() {
             <br/>
             <br/>
             <h3>Sync rules</h3>
-            <RuleListViewer sourceTracker={sourceFilter.tracker} destinationTracker={destinationFilter.tracker}
-                            ruleList={ruleList} refreshRuleList={refreshRuleList}/>
+            <RuleListViewer ruleList={ruleList} refreshRuleList={refreshRuleList}/>
         </Container>
     </MantineProvider>;
 }
