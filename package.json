@@ -5,7 +5,8 @@
   "main": "src/index.tsx",
   "scripts": {
     "serve": "webpack serve",
-    "build": "webpack build"
+    "build": "webpack build",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
