@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import {Container, rem, Select, TextInput} from "@mantine/core";
 import axios from "axios";
 import {FieldFilter, FilterOps, FilterOpType} from "./FieldFilter";
-import {SyncDirection} from "./SyncRule";
 
 const OpSelectWidth = 70;
 
@@ -52,7 +51,7 @@ export function FieldSelector({value, setValue, isDestination, isComparing}: {
                     setValue({...FieldFilter.DefaultFilter, tracker: tracker});
                 }
             }}
-            renderOption={({option, checked}) => <>Project: {option.value}</>}
+            renderOption={({option, checked}) => <>Tracker: {option.value}</>}
             value={value.tracker}
         />
         <Select
@@ -107,7 +106,6 @@ export function FieldSelector({value, setValue, isDestination, isComparing}: {
                         marginLeft: rem(-2),
                         textAlign: "end",
                         paddingInlineEnd: "calc(var(--input-padding-inline-end)*0.5)"
-                        // marginRight: rem(1)
                     }
                 }}
             />}
