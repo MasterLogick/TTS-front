@@ -24,7 +24,7 @@ export function FieldSelector({value, setValue, isDestination, isComparing}: {
     useEffect(() => {
         if (value.tracker === "")
             return;
-        axios.get("/api/boards", {params: {project: value.tracker}}).then(resp => {
+        axios.get("/api/boards", {params: {tracker: value.tracker}}).then(resp => {
             setBoards(resp.data);
         }).catch(err => {
             setBoards(["first board", "second board"]);
@@ -33,7 +33,7 @@ export function FieldSelector({value, setValue, isDestination, isComparing}: {
     useEffect(() => {
         if (value.board === "" || value.tracker === "")
             return;
-        axios.get("/api/fields", {params: {project: value.tracker, board: value.board}}).then(resp => {
+        axios.get("/api/fields", {params: {tracker: value.tracker, board: value.board}}).then(resp => {
             setFields(resp.data);
         }).catch(err => {
             setFields(["first field", "second field"]);
